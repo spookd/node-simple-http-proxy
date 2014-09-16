@@ -27,7 +27,7 @@ module.exports = exports = class extends require("events").EventEmitter
     @entries = []
     @proxy   = httpProxy.createServer(xfwd: true)
     @http    = http.createServer(@clientDidConnect)
-    @http.listen(3000)
+    @http.listen(process.env.PORT || 3000)
 
     process.on "exit", =>
       for entry in @entries

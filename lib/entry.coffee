@@ -1,10 +1,10 @@
-path = require("path")
-fs = require("fs")
-watch       = require("watch")
+path     = require("path")
+fs       = require("fs")
+watch    = require("watch")
 freeport = require("freeport")
-forever = require("forever-monitor")
-spawn = require("child_process").spawn
-Socket = require("net").Socket
+forever  = require("forever-monitor")
+spawn    = require("child_process").spawn
+Socket   = require("net").Socket
 
 module.exports = exports = class extends require("events").EventEmitter
   constructor: (@dir, @socket) ->

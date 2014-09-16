@@ -1,5 +1,5 @@
 _     = require("lodash")
-Proxy = require("./lib/proxy")
+Proxy = require("./proxy")
 
 defaults =
   root: "/var/www"

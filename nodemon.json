@@ -1,0 +1,12 @@
+{
+  "verbose": true,
+  "restartable": "rs",
+  "watch": [
+    "./",
+    "./lib"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js json yaml coffee md"
+}

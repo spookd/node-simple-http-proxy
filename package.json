@@ -1,0 +1,35 @@
+{
+  "name": "node-simple-http-proxy",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spookd/node-simple-http-proxy.git"
+  },
+  "keywords": [
+    "simple",
+    "http",
+    "proxy",
+    "node",
+    "js"
+  ],
+  "author": "spookd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spookd/node-simple-http-proxy/issues"
+  },
+  "homepage": "https://github.com/spookd/node-simple-http-proxy",
+  "dependencies": {
+    "coffee-script": "^1.8.0",
+    "forever-monitor": "^1.3.0",
+    "freeport": "^1.0.3",
+    "glob": "^4.0.5",
+    "http-proxy": "^1.4.3",
+    "lodash": "^2.4.1",
+    "watch": "^0.11.0"
+  }
+}

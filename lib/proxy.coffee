@@ -61,11 +61,11 @@ module.exports = exports = class extends require("events").EventEmitter
         else
           req.url = req.url.substr(dir.length)
 
-        req.setHeader("X-Forwarded-Path", dir)
-
         isHTML = false
         isCSS  = req.url.substr(-4) is ".css"
         isJS   = req.url.substr(-3) is ".js"
+
+        req.headers['X-Forwarded-Path'] = dir
 
         origWriteHead = res.writeHead
         res.writeHead = (code, headers = {}) ->
@@ -86,7 +86,7 @@ module.exports = exports = class extends require("events").EventEmitter
             isCSS  = value.substr(0, 8) is "text/css" unless isCSS
             isJS   = value.substr(0, 14) is "text/javascript" unless isJS
 
-          origWriteHead.apply(res, [key, value])
+          origSetHeader.apply(res, [key, value])
 
         origWrite = res.write
         res.write = (buffer) ->

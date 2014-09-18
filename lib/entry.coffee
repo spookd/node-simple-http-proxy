@@ -22,7 +22,8 @@ module.exports = exports = class extends require("events").EventEmitter
       try
         @package = JSON.parse(@package)
 
-        @proc = spawn("npm", ["install", "--production"], cwd: @dir)
+        npm   = if process.platform is "win32" then "npm.cmd" else "npm"
+        @proc = spawn(npm, ["install", "--production"], cwd: @dir)
         @proc.on "exit", (code, signal) =>
           return @reload() if not signal and not code
           console.error "!! NPM (#{@dir}): Exited with code #{code}" if code
